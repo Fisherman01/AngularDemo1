@@ -1,0 +1,26 @@
+<!doctype html>
+<html ng-app="angularDemo1">
+  <head>
+    <meta charset="utf-8">
+    <title>AngularJS Email App</title>
+    <link href="css/style.css" rel="stylesheet">
+    <!-- Vendor libraries -->
+    <!--<script src="lib/jquery-v1.11.1.js"></script>-->
+    <script src="lib/angular-v1.2.22.js"></script>
+    <!--<script src="lib/angular-route-v1.2.22.js"></script>-->
+    <!-- Application Files -->
+    <script src="js/app.js"></script>
+  </head>
+  <body ng-controller = "DemoController as demo">
+
+  <div ng-repeat="product in demo.products" ng-show="product.canPurchase">
+
+   <h1>{{product.brand}}</h1> <h2>{{product.model}}</h2>
+   <h2><em class="pull-right">${{product.price}}</em></h2>
+    <h3 ng-show="product.souldOut">Sold out!</h3>
+    <button  ng-hide="product.souldOut">Add to Cart</button>
+    <p>--------------------------------------------------------</p>
+  </div>
+
+  </body>
+</html>
